@@ -65,41 +65,41 @@
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.5s">
 
-                            <form>
+                            <form action="reg" method="post">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="uname" placeholder="Enter Name">
+                                            <input type="text" name="uname" class="form-control" id="uname" placeholder="Enter Name">
                                             <label for="uname">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                                            <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email">
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="cadd" placeholder="Enter Address">
+                                            <input type="text" name="cadd" class="form-control" id="cadd" placeholder="Enter Address">
                                             <label for="cadd">Address</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="mob" placeholder="Enter Contact Number">
+                                            <input type="text" name="mob" class="form-control" id="mob" placeholder="Enter Contact Number">
                                             <label for="mob">Contact Number</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="unm" placeholder="Enter Username">
+                                            <input type="text" name="unm" class="form-control" id="unm" placeholder="Enter Username">
                                             <label for="unm">Username</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="pw" placeholder="Enter Password">
+                                            <input type="text" name="pw" class="form-control" id="pw" placeholder="Enter Password">
                                             <label for="pw">Password</label>
                                         </div>
                                     </div>

@@ -65,17 +65,17 @@
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.5s">
 
-                            <form>
+                            <form action="login" method="post">
                                 
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="unm" placeholder="Enter Username">
+                                            <input type="text" class="form-control" name="unm" id="unm" placeholder="Enter Username">
                                             <label for="unm">Username</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="pw" placeholder="Enter Password">
+                                            <input type="text" class="form-control" name="pw" id="pw" placeholder="Enter Password">
                                             <label for="pw">Password</label>
                                         </div>
                                     </div>

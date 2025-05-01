@@ -2,8 +2,10 @@ package com.univ.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import com.univ.bean.User;
 import com.univ.service.UserService;
 
 @Controller
@@ -51,8 +53,40 @@ public class IndexController {
 		return "reg";
 	}
 	
+	@PostMapping("/reg")
+	public String reg1(@ModelAttribute("usr") User usr) {
+		if(usr.getUname() == null || usr.getUname().isEmpty()) {
+			return "reg";
+		}else {
+			User u= serv.insert(usr);
+			if(u!=null) {
+				return "login";
+			}else {
+				return "reg";
+			}
+		}
+		
+	}
+	
 	@RequestMapping("/login")
 	public String login() {
 		return "login";
 	}
+	
+	@PostMapping("/login")
+	public String login1(@ModelAttribute("usr") User usr) {
+		if(usr.getUnm().isEmpty()) {
+			return "login";
+		}else {
+			User u=serv.checkLogin(usr.getUnm(),usr.getPw());
+			if(u!=null) {
+				return "index";
+			}else {
+				return "login";
+			}
+		}
+	}
+	
+	
+	
 }

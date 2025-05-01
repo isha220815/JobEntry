@@ -54,11 +54,6 @@ public class User {
 	public void setMob(long mob) {
 		this.mob = mob;
 	}
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", uname=" + uname + ", cadd=" + cadd + ", email=" + email + ", unm=" + unm + ", pw="
-				+ pw + ", mob=" + mob + "]";
-	}
 	public User(int id, String uname, String cadd, String email, String unm, String pw, long mob) {
 		super();
 		this.id = id;
