@@ -1,5 +1,7 @@
 package com.univ.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.univ.bean.User;
@@ -20,5 +22,8 @@ public class UserService {
 	public User checkLogin(String unm,String pw) {
 		return userrepo.getLogin(unm,pw);
 		
+	}
+	public List<User> getAllUsers() {
+	    return userrepo.findAll();
 	}
 }
