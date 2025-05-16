@@ -29,10 +29,9 @@ public class Post {
     private String contactEmail;
     private boolean isActive = true;
     
+    @Column(columnDefinition = "DATETIME")
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    // Constructors, Getters, and Setters
-    public Post() {}
 
     public Post(String title, String company, String description) {
         this.title = title;
@@ -40,6 +39,122 @@ public class Post {
         this.description = description;
     }
 
-    // Add all other getters and setters
-    // (Use your IDE to generate these)
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getTitle() {
+		return title;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+
+	public String getCompany() {
+		return company;
+	}
+
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+
+	public String getDescription() {
+		return description;
+	}
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+	public String getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+
+	public String getSalary() {
+		return salary;
+	}
+
+
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
+
+
+	public String getRequirements() {
+		return requirements;
+	}
+
+
+	public void setRequirements(String requirements) {
+		this.requirements = requirements;
+	}
+
+
+	public String getJobType() {
+		return jobType;
+	}
+
+
+	public void setJobType(String jobType) {
+		this.jobType = jobType;
+	}
+
+
+	public String getContactEmail() {
+		return contactEmail;
+	}
+
+
+	public void setContactEmail(String contactEmail) {
+		this.contactEmail = contactEmail;
+	}
+
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
+
+	public Post() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+    
+    
+
 }

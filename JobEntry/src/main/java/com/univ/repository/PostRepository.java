@@ -20,4 +20,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
            "(:title IS NULL OR LOWER(p.title) LIKE LOWER(CONCAT('%', :title, '%'))) AND " +
            "(:company IS NULL OR LOWER(p.company) LIKE LOWER(CONCAT('%', :company, '%'))) ")
     List<Post> searchPosts(@Param("title") String title, @Param("company") String company);
+    
+    
+   
 }

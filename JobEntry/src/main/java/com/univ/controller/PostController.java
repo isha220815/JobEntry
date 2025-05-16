@@ -1,8 +1,10 @@
 package com.univ.controller;
 
 import com.univ.bean.Post;
+import com.univ.repository.PostRepository;
 import com.univ.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +14,9 @@ import java.util.List;
 public class PostController {
 
     @Autowired
-    private PostService postService;
+    PostService postService;
+    @Autowired
+    PostRepository postRepository;
 
     // Endpoint to search posts by title
     @GetMapping("/search/title")
@@ -32,4 +36,5 @@ public class PostController {
                                   @RequestParam(required = false) String company) {
         return postService.searchPosts(title, company);
     }
+    
 }

@@ -11,7 +11,7 @@ import java.util.List;
 public class PostService {
 
     @Autowired
-    private PostRepository postRepository;
+    PostRepository postRepository;
 
     // Search by title
     public List<Post> searchByTitle(String title) {
@@ -26,5 +26,13 @@ public class PostService {
     // Search by title and company
     public List<Post> searchPosts(String title, String company) {
         return postRepository.searchPosts(title, company);
+    }
+    
+    public void save(Post post) {
+        postRepository.save(post);  // DB mein insert/update
+    }
+    
+    public List<Post> getAllJobs() {
+        return postRepository.findAll();
     }
 }

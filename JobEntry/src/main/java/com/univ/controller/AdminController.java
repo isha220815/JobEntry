@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +15,10 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.univ.bean.Admin;
-
+import com.univ.bean.Post;
 import com.univ.bean.User;
 import com.univ.service.AdminServices;
+import com.univ.service.PostService;
 import com.univ.service.UserService;
 
 import org.springframework.ui.Model;
@@ -29,6 +31,8 @@ public class AdminController {
 	AdminServices serv;
 	@Autowired
 	UserService userService;
+	 @Autowired
+	PostService postService;
 
 	@RequestMapping("/admin_index")
 	public String admin_index() {
@@ -76,6 +80,21 @@ public class AdminController {
 	    m.addAttribute("clist", list);
 	    return "/admin/view_user"; 
 	}
+	
+
+    @GetMapping("/admin_add_job")
+    public String showAddJobForm(Model model) {
+        model.addAttribute("post", new Post());  
+        return "/admin/add_job"; 
+    }
+	
+   
+    @PostMapping("/admin_add_job")
+    public String addJob(@ModelAttribute("post") Post post) {
+        postService.save(post);  
+        return "/admin/index"; 
+    }
+
 	
 	
 	

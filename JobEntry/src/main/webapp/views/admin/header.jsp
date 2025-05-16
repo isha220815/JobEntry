@@ -61,7 +61,7 @@
                              <li><a href="admin_login" >Login</a></li>
                              <li><a href="admin_reg" >Register</a></li>
                              <li><a href="admin_view_user" >View User</a></li>
-                              
+                             <li><a href="admin_add_job" >Add new Job</a></li>
 
                         </ul>
                     </div>
