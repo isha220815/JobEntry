@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.univ.bean.Post;
 import com.univ.bean.User;
@@ -96,14 +97,28 @@ public class IndexController {
 		}
 	}
 	
-    @GetMapping("/job_list")
-    public String jobList(Model model) {
-        List<Post> jobs = postService.getAllJobs();
-        model.addAttribute("jobList", jobs);
-        System.out.println("Jobs fetched: " + jobs.size());
+	/*
+	 * @GetMapping("/job_list") public String jobList(Model model) { List<Post> jobs
+	 * = postService.getAllJobs(); model.addAttribute("jobList", jobs);
+	 * System.out.println("Jobs fetched: " + jobs.size());
+	 * 
+	 * return "job_list"; }
+	 */
+	
+	@GetMapping("/job_list")
+	public String getAllJobs(@RequestParam(value = "title", required = false) String search, Model model) {
+	    List<Post> jobs;
+	    if (search != null && !search.trim().isEmpty()) {
+	        jobs = postService.searchJobs(search);
+	    } else {
+	        jobs = postService.getAllJobs();
+	    }
+	    model.addAttribute("jobList", jobs);
+	    model.addAttribute("search", search); // To retain search term in UI
+	    return "job_list";
+	}
 
-        return "job_list"; 
-    }
+
 	
 	
 }

@@ -30,11 +30,14 @@ public class PostController {
         return postService.searchByCompany(company);
     }
 
-    // Endpoint to search posts by title and company
-    @GetMapping("/search")
-    public List<Post> searchPosts(@RequestParam(required = false) String title,
-                                  @RequestParam(required = false) String company) {
-        return postService.searchPosts(title, company);
-    }
+	/*
+	 * // Endpoint to search posts by title and company
+	 * 
+	 * @GetMapping("/search") public List<Post> searchPosts(@RequestParam(required =
+	 * false) String title,
+	 * 
+	 * @RequestParam(required = false) String company) { return
+	 * postService.searchPosts(title, company); }
+	 */
     
 }
